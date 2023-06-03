@@ -1,0 +1,141 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+a:link, a:visited{
+    text-decoration: none;
+}
+
+.navbar{
+    display: flex;
+    width: 100%;
+    color: black;
+    background: #A3A3A3;
+}
+
+.navbar a:link, .navbar a:visited{
+    color: black;
+}
+
+.navbar .nav-container{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.nav-container .navbar-home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item-container ul{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-container{
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.add-property-btn, .add-option-btn{
+    padding: 15px;
+    background: blue;
+    color: white;
+    border-radius: 10px;
+}
+
+.list-table{
+    width: 100%;
+    max-width: 1400px;
+}
+
+.list-table tbody tr td{
+    text-align: center;
+}
+
+.list-table .action-btn{
+    display: flex;
+    justify-content: center;
+    gap: 20px
+}
+
+.action-btn a{
+    padding: 15px;
+    border-radius: 10px;
+    background: blue;
+    color: white;
+    border: transparent;
+}
+
+.delete-btn{
+    padding: 15px;
+    border-radius: 10px;
+    background: red;
+    color: white;
+    cursor: pointer;
+    border: transparent;
+}
+
+
+/* FORM */
+
+.form-create{
+    width: 100%;
+    margin: 0 auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.form-group label{
+    margin-bottom: 10px;
+}
+
+.form-group input, .form-group textarea{
+    width: 100%;
+    max-width: 1400px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-bottom: 20px;
+    padding: unset;
+}
+
+.form-check{
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.form-create button{
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    padding: 15px;
+    border: transparent;
+    border-radius: 10px;
+}

@@ -1,21 +1,22 @@
-@extends('admin.properties.admin')
+@extends('admin.admin')
 
 @section('title', 'Tous les biens')
 
 @section('content')
 
-    <div>
+    <div class="btn-container">
         <h1>@yield('title')</h1>
         <a href="{{ route('admin.property.create') }}" class="add-property-btn">Ajouter un bien</a>
     </div>
 
-    <table>
+    <table class="list-table">
         <thead>
         <tr>
             <th>Titre</th>
             <th>Surface</th>
             <th>Prix</th>
             <th>Ville</th>
+            <th>Disponibilité</th>
             <th class="text-end">Actions</th>
         </tr>
         </thead>
@@ -26,6 +27,7 @@
                     <td>{{ $property->surface }}m²</td>
                     <td>{{ number_format($property->price, thousands_separator: ' ') }}</td>
                     <td>{{ $property->city }}</td>
+                    <td>{{ $property->sold ? 'Vendu' : 'Dispo' }}</td>
                     <td>
                         <div class="action-btn">
                             <a classs="edit-btn" href="{{ route('admin.property.edit', $property) }}"> Editer </a>

@@ -1,35 +1,29 @@
-@extends('admin.properties.admin')
+@extends('admin.admin')
 
-@section('title', 'Tous les biens')
+@section('title', 'Toutes les options')
 
 @section('content')
 
-    <div>
+    <div class="btn-container">
         <h1>@yield('title')</h1>
-        <a href="{{ route('admin.property.create') }}" class="add-property-btn">Ajouter un bien</a>
+        <a href="{{ route('admin.option.create') }}" class="add-option-btn">Ajouter une option</a>
     </div>
 
-    <table>
+    <table class="list-table">
         <thead>
         <tr>
-            <th>Titre</th>
-            <th>Surface</th>
-            <th>Prix</th>
-            <th>Ville</th>
+            <th>Nom de l'option</th>
             <th class="text-end">Actions</th>
         </tr>
         </thead>
         <tbody>
-            @foreach($properties as $property)
+            @foreach($options as $option)
                 <tr>
-                    <td>{{ $property->title }}</td>
-                    <td>{{ $property->surface }}m²</td>
-                    <td>{{ number_format($property->price, thousands_separator: ' ') }}</td>
-                    <td>{{ $property->city }}</td>
+                    <td>{{ $option->name }}</td>
                     <td>
                         <div class="action-btn">
-                            <a classs="edit-btn" href="{{ route('admin.property.edit', $property) }}"> Editer </a>
-                            <form action="{{ route('admin.property.destroy', $property) }}" method="post">
+                            <a classs="edit-btn" href="{{ route('admin.option.edit', $option) }}"> Editer </a>
+                            <form action="{{ route('admin.option.destroy', $option) }}" method="post">
                                 @csrf 
                                 @method("delete")
                                 <button class="delete-btn">Supprimer</button>
@@ -41,6 +35,6 @@
         </tbody>
     </table>
 
-    {{ $properties->links()}}
+    {{ $options->links()}}
 
 @endsection

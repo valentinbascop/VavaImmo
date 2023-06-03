@@ -1,4 +1,4 @@
-@extends('admin.properties.admin')
+@extends('admin.admin')
 
 @section('title', $property->exists ? "Editer un bien" : "Enregistrer un bien")
 
@@ -6,7 +6,7 @@
 
     <h1>@yield('title')</h1>
 
-    <form action="{{ route($property->exists ? 'admin.property.update' : 'admin.property.store', ['property' => $property]) }}" method="POST">
+    <form action="{{ route($property->exists ? 'admin.property.update' : 'admin.property.store', ['property' => $property]) }}" method="POST" class="form-create">
         @csrf
         @method($property->exists ? 'put' : 'post')
 

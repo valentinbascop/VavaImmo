@@ -1,4 +1,4 @@
-@extends('admin.properties.admin')
+@extends('admin.admin')
 
 @section('title', $option->exists ? "Editer une option" : "Créer une option")
 
