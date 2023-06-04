@@ -13,7 +13,7 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <a class="navbar-home" href="/admin/property"><img src="https://placehold.co/200x50"></a>
+            <a class="navbar-home" href="/"><img src="{{ asset('images/logo.svg') }}"></a>
             
             @php
             $route = request()->route()->getName();

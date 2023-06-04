@@ -1,4 +1,7 @@
 @extends('admin.admin')
+@php
+$value ??= '';
+@endphp
 
 @section('title', 'Tous les biens')
 

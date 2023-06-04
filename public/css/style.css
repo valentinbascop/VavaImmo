@@ -18,6 +18,10 @@ a:link, a:visited{
     color: white;
 }
 
+.navbar-home{
+
+}
+
 .navbar .nav-container{
     width: 100%;
     display: flex;
@@ -32,6 +36,12 @@ a:link, a:visited{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100px;
+    height: 60px;
+}
+
+.nav-container .navbar-home img{
+    width: 100%;
 }
 
 .nav-item-container ul{
