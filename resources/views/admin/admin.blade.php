@@ -13,7 +13,8 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <a class="navbar-home" href="/"><img src="{{ asset('images/logo.svg') }}"></a>
+            <!-- <a class="navbar-home" href="/"><img src="{{ asset('images/logo.svg') }}"></a> -->
+            <a class="navbar-home" href="/">Agence</a>
             
             @php
             $route = request()->route()->getName();

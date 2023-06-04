@@ -9,8 +9,8 @@
         </div>
     </div>
 
-    <div>
-        <h2>Biens les plus récents</h2>
+    <div class="list-container">
+        <h2 class="listing-title">Biens les plus récents</h2>
         <div class="listing-properties">
             @foreach($properties as $property)
             <div class="list-element">

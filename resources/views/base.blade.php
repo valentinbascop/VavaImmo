@@ -11,15 +11,16 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <a class="navbar-home" href="/"><img src="{{ asset('images/logo.svg') }}"></a>
-            
+            <!-- <a class="navbar-home" href="/"><img src="{{ asset('images/logo.svg') }}"></a> -->
+            <a class="navbar-home" href="/">Agence</a>
+
             @php
             $route = request()->route()->getName();
             @endphp
             <div class="nav-item-container">
                 <ul>
                     <li class="nav-item">
-                        <a href="/" @class(['nav-link', 'active' => str_contains($route, 'property.')])>Voir les biens</a>
+                        <a href="{{ route('property.index') }}" @class(['nav-link', 'active' => str_contains($route, 'property.')])>Voir les biens</a>
                     </li>
                 </ul>
             </div>

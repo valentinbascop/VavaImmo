@@ -151,3 +151,40 @@ a:link, a:visited{
     border: transparent;
     border-radius: 10px;
 }
+
+.home-container{
+    text-align: center;
+    width: 100%;
+}
+
+
+/* Card list */
+
+.list-container{
+    padding: 0 40px;
+}
+
+.listing-title{
+    text-align: center;
+}
+
+.listing-properties{
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.list-element{
+    border: 1px solid;
+    width: calc((100% / 3) - 50px );
+}
+
+.list-element .card-text, .list-element .card-body, .list-element .card-title{
+    margin: 0;
+}
+
+/* Pagination */ 
+
+.hidden{
+    display: none;
+}
