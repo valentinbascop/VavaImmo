@@ -11,15 +11,15 @@
             <input type="number" placeholder="Budget max" class="form-control" name="price" value="{{ $input['price'] ?? '' }}">
             <input type="text" placeholder="mot clé" class="form-control" name="title" value="{{ $input['title'] ?? '' }}">
             <button class="btn-search">
-                Rechercher
+                <i class="fa-solid fa-magnifying-glass" style="color: #12264a; font-size: 16px; padding: 10px;"></i>
             </button>
         </form>
     </div>
 
-    <div class="container">
+    <div class="container container-list-property">
         <div class="row">
             @forelse($properties as $property)
-            <div class="list-property">
+            <div class="list-element">
                 @include('property.card')
             </div>
             @empty

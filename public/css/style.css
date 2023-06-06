@@ -1,3 +1,18 @@
+/* CSS reset */
+
+html, body, div, span, applet, object, iframe, h5, h6, p, ul{
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+button{
+    all: unset; 
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -48,6 +63,9 @@ a:link, a:visited{
     list-style: none;
     display: flex;
     gap: 15px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 
@@ -57,6 +75,21 @@ a:link, a:visited{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.log-out{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+}
+
+.log-out ul{
+    list-style: none;
+}
+
+.log-out button{
+    color: white;
+    cursor: pointer;
 }
 
 .btn-container{
@@ -175,7 +208,6 @@ a:link, a:visited{
 }
 
 .list-element{
-    border: 1px solid;
     width: calc((100% / 3) - 50px );
 }
 
@@ -188,3 +220,116 @@ a:link, a:visited{
 .hidden{
     display: none;
 }
+
+/* Card */
+
+.card{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.card-title{
+    font-size: 24px;
+    padding-bottom: 15px;
+}
+
+.card-title a:link, .card-title a:visited{
+    text-decoration: none;
+    color: black;
+}
+
+/* Search filter */
+
+.search-property-form{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    gap: 10px;
+}
+
+.search-property-form input::-webkit-outer-spin-button, input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.search-property-form input{
+    padding: 10px;
+}
+
+.search-property-form button{
+    cursor: pointer;
+}
+
+/* List property */
+
+.container-list-property{
+    width: 100%;
+}
+
+.container-list-property .row{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.list-property-element{
+    width: calc((100% / 3) - 20px);
+}
+
+/* Single page */
+
+.form-contact-container{
+    text-align: center;
+    /* width: 100%; */
+    margin-bottom: 60px;
+}
+
+.form-contact .row{
+    display: flex;
+    gap: 20px;
+}
+
+.form-contact .btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: #76CDE4;
+    border: 1px solid;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.form-contact .btn:hover{
+    background: #38ABC9;
+    transition: all 0.3s;
+}
+
+hr{
+    width: 90%;
+}
+
+.property-desc{
+    font-size: 20px;
+}
+
+.row-info-property{
+    display: flex;
+    gap: 60px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* .row-info-property{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.row-info-property .row-title{
+    padding: 0 40px;
+} */

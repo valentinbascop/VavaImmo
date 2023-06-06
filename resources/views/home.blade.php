@@ -4,8 +4,8 @@
 
     <div class="home-container">
         <div class="inner-container">
-            <h1>TEST</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda dolores sint id maxime, sed atque quis tenetur, dolor labore beatae aliquam voluptates, consequatur vel sit illum neque est veniam quos.</p>
+            <h1>Projet agence immobilère</h1>
+            <p>Ce site est un projet qui a pour but de me permettre d'apprendre le Laravel</p>
         </div>
     </div>
 
