@@ -41,7 +41,8 @@
                             hx-delete="{{ route('admin.picture.destroy', $picture) }}"
                             hx-target="#picture{{ $picture->id }}"
                             hx-swap="delete"
-                        > Supprimer l'image</button>
+                        > 
+                        Supprimer l'image</button>
                     </div>
                 @endforeach
                 @include('shared.upload', ['label' => 'Image', 'name' => 'pictures', 'multiple' =>  true])

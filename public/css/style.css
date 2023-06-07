@@ -378,19 +378,6 @@ hr{
     justify-content: center;
 }
 
-/* .row-info-property{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.row-info-property .row-title{
-    padding: 0 40px;
-} */
-
-
-/* Carousel */ 
-
 /* Carousel */
 
 .carousel-container {
@@ -443,3 +430,16 @@ hr{
     right: 10px;
   }
   
+
+  .form-picture-container{
+    position: relative;
+    max-width: 673px;
+  }
+
+  .form-picture-container .delete-picture{
+    position: absolute;
+    bottom: 0;
+    width: 96%;
+    left: 0;
+    text-align: center;
+  }

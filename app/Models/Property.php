@@ -43,7 +43,10 @@ class Property extends Model
     /**
      * @param UploadedFile[] $files
      */
-    public function attachFiles(array $files){
+    public function attachFiles(?array $files){
+        if ($files === null || empty($files)) {
+            return;
+        }
         $pictures = [];
         foreach($files as $file){
             if($file->getError()){
