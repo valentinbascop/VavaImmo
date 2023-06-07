@@ -75,6 +75,8 @@ a:link, a:visited{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .log-out{
@@ -146,15 +148,42 @@ a:link, a:visited{
 .form-create{
     width: 100%;
     margin: 0 auto;
-    max-width: 600px;
+    /* max-width: 600px; */
+}
+
+.global-row{
     display: flex;
-    flex-direction: column;
+    width: 100%;
+    gap: 60px;
+}
+
+.global-row .form-row{
+    width: 50%;
+}
+
+.form-create .form-row .row{
+    display: flex;
+    gap: 20px;
 }
 
 .form-group{
     display: flex;
     flex-direction: column;
     text-align: center;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-picture{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ts-wrapper{
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .form-group label{
@@ -205,6 +234,7 @@ a:link, a:visited{
     display: flex;
     gap: 50px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .list-element{
@@ -226,6 +256,11 @@ a:link, a:visited{
 .card{
     border: 1px solid black;
     padding: 5px;
+}
+
+.card-image{
+    height: 300px;
+    width: 100%;
 }
 
 .card-title{
@@ -273,6 +308,7 @@ a:link, a:visited{
     gap: 20px;
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .list-property-element{
@@ -283,25 +319,38 @@ a:link, a:visited{
 
 .form-contact-container{
     text-align: center;
-    /* width: 100%; */
+    width: 100%;
     margin-bottom: 60px;
+    padding: 0 40px;
+    max-width: 1400px;
+}
+
+.form-contact{
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .form-contact .row{
     display: flex;
     gap: 20px;
+    width: 100%;
+    justify-content: center;
 }
 
 .form-contact .btn{
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     justify-content: center;
     padding: 10px;
-    background: #76CDE4;
+    background: #4788D7;
     border: 1px solid;
     color: white;
     font-size: 20px;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .form-contact .btn:hover{
@@ -310,7 +359,12 @@ a:link, a:visited{
 }
 
 hr{
-    width: 90%;
+    width: 100%;
+}
+
+.property-title{
+    font-size: 2rem;
+    margin: 10px 0;
 }
 
 .property-desc{
@@ -333,3 +387,59 @@ hr{
 .row-info-property .row-title{
     padding: 0 40px;
 } */
+
+
+/* Carousel */ 
+
+/* Carousel */
+
+.carousel-container {
+    max-width: 800px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .carousel-item {
+    flex: 0 0 800px;
+    height: 450px;
+  }
+  
+  .carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .carousel-prev,
+  .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white; /* Adjust the color as needed */
+    font-size: 24px; /* Adjust the font size as needed */
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .carousel-prev:hover,
+  .carousel-next:hover {
+    color: #aaa; /* Adjust the hover color as needed */
+  }
+  
+  .carousel-prev {
+    left: 10px;
+  }
+  
+  .carousel-next {
+    right: 10px;
+  }
+  

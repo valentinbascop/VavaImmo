@@ -1,4 +1,11 @@
 <div class="card">
+    <div class="card-image">
+        @if($property->getPicture())
+            <img src="{{ $property->getPicture()->getImageUrl() }}" alt="" class="form-picture">
+        @else
+            <img src="/empty.png" alt="" class="form-picture">
+        @endif
+    </div>
     <div class="card-body">
         <h5 class="card-title">
             <a href="{{ route('property.show', ['slug' => $property->getSlug(), 'property' => $property] )}}">{{ $property->title }}</a>

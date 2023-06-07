@@ -6,7 +6,22 @@
 
 <div class="container">
 
-  <h1>{{ $property->title}}</h1>
+  <h1 class="property-title">{{ $property->title}}</h1>
+
+  <div class="carousel-container">
+  <div class="carousel-inner">
+    @foreach($property->pictures as $k => $picture)
+      <div class="carousel-item {{$k === 0 ? 'active' : '' }}">
+        <img src="{{ $picture->getImageUrl() }}" alt="">
+      </div>
+    @endforeach
+  </div>
+  <button class="carousel-prev"><i class="fa-solid fa-arrow-left"></i></button>
+  <button class="carousel-next"><i class="fa-solid fa-arrow-right"></i></button>
+</div>
+
+
+
   <h2>{{ $property->rooms}} pièces - {{ $property->surface}} m²</h2>
 
   <div class="property-info">
