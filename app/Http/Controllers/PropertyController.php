@@ -50,7 +50,12 @@ class PropertyController extends Controller
 
     public function contact(Property $property, PropertyContactRequest $request)
     {
+        // Les données du formulaire ont déjà été validées à ce stade
+
+        // Envoyer l'e-mail de contact
         Mail::send(new PropertyContactMail($property, $request->validated()));
-        return back()->with('success', 'Votre demande de contact a bien été envoyé');
+
+        // Rediriger l'utilisateur avec un message de succès
+        return back()->with('success', 'Votre demande de contact a bien été envoyée');
     }
 }

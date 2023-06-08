@@ -13,7 +13,7 @@
         @include('shared.input', ['name' => 'name', 'label' => 'Nom', 'value' => $option->name])
 
 
-        <button class="form-submit-btn">
+        <button class="form-submit-btn validate-btn">
             @if($option->exists)
                 Modifier
             @else
