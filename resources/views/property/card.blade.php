@@ -1,3 +1,4 @@
+<a href="{{ route('property.show', ['slug' => $property->getSlug(), 'property' => $property] )}}" class="card-link">
 <div class="card">
     <div class="card-image">
         @if($property->getPicture())
@@ -8,9 +9,10 @@
     </div>
     <div class="card-body">
         <h5 class="card-title">
-            <a href="{{ route('property.show', ['slug' => $property->getSlug(), 'property' => $property] )}}">{{ $property->title }}</a>
+            {{ $property->title }}
         </h5>
         <p class="card-text">{{$property->surface}} m² - {{$property->city}} {{$property->postal_code}}</p>
         <div class="price">{{number_format($property->price, thousands_separator: ' ' )}} €</div>
     </div>
 </div>
+</a>

@@ -34,5 +34,6 @@
 @yield('content')
     
 <script type="text/javascript" src="{{ asset('js/script.js') }}?v=1.5"></script>
+@extends('footer')
 </body>
 </html>
