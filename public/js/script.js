@@ -43,3 +43,35 @@ $(document).ready(function() {
     carousel.css("transform", "translateX(-" + (currentSlide * slideWidth) + "px)");
   });
 });
+
+
+// FINANCEMENT
+
+    // Calculate financing details
+    function calculateFinancing() {
+      var propertyPrice = parseInt(document.getElementById('property-price').value);
+      var downPayment = parseInt(document.getElementById('down-payment').value);
+      var installments = parseInt(document.getElementById('installments').value);
+      var interestRate = 3.5; // Set your desired interest rate
+      var notaryFeesPercentage = 8; // Set notary fees percentage
+
+      // Calculate financing values
+      var loanAmount = propertyPrice - downPayment;
+      var monthlyInterestRate = (interestRate / 100) / 12;
+      var monthlyInstallment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -installments));
+      var totalLoanAmount = loanAmount + (monthlyInstallment * installments);
+      var interestCost = totalLoanAmount - loanAmount;
+      var notaryFees = (notaryFeesPercentage / 100) * propertyPrice;
+
+      // Update displayed values
+      document.getElementById('monthly-installment').textContent = monthlyInstallment.toFixed(2);
+      document.getElementById('total-loan-amount').textContent = totalLoanAmount.toFixed(2);
+      document.getElementById('interest-cost').textContent = interestCost.toFixed(2);
+      document.getElementById('notary-fees').textContent = notaryFees.toFixed(2);
+    }
+
+    // Attach event listener to the range input element
+    document.getElementById('installments').addEventListener('input', calculateFinancing);
+
+    // Initial calculation
+    calculateFinancing();

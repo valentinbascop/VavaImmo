@@ -402,6 +402,8 @@ hr{
 
 .property-desc{
     font-size: 20px;
+    width: 100%;
+    text-align: center;
 }
 
 .row-info-property{
@@ -532,4 +534,13 @@ hr{
     border-radius: 10px;
     font-size: 20px;
     border: 1px solid #2BAD3A;
+  }
+
+
+  /* Financement */ 
+
+  .financing-simulator-container{
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
   }

@@ -94,6 +94,38 @@
 
   </div>
 
+  <div class="financing-simulator-container">
+
+    <h2>Simulation de financement</h2>
+  
+    <div id="financing-simulator">
+      <div class="form-group">
+        <label for="property-price">Prix du bien</label>
+        <input type="number" id="property-price" class="form-control" value="{{ $property->price }}" disabled>
+      </div>
+  
+      <div class="form-group">
+        <label for="down-payment">Apport personnel</label>
+        <input type="number" id="down-payment" class="form-control" placeholder="Enter down payment amount">
+      </div>
+  
+      <div class="form-group">
+        <label for="installments">Nombre de mensualités</label>
+        <input type="range" id="installments" class="form-control-range" min="5" max="30" step="5">
+      </div>
+  
+      <div id="financing-results">
+        <h4>Résumé</h4>
+        <p>Mensualités : <span id="monthly-installment"></span> €</p>
+        <p>Montant de l'emprunt : <span id="total-loan-amount"></span> €</p>
+        <p>Coûts des intérêts : <span id="interest-cost"></span> €</p>
+        <p>Frais de notaire : <span id="notary-fees"></span> €</p>
+      </div>
+    </div>
+
+  </div>
+
+
 </div>
 
 @endsection
