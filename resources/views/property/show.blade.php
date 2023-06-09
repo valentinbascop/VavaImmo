@@ -94,6 +94,8 @@
 
   </div>
 
+  <hr>
+
   <div class="financing-simulator-container">
 
     <h2>Simulation de financement</h2>
@@ -110,16 +112,19 @@
       </div>
   
       <div class="form-group">
-        <label for="installments">Nombre de mensualités</label>
-        <input type="range" id="installments" class="form-control-range" min="5" max="30" step="5">
+        <label for="installments">Durée du prêt</label>
+        <p><span id="years-value">5</span> ans</p>
+        <input type="range" id="years" min="5" max="30" value="5" step="5">
       </div>
   
       <div id="financing-results">
         <h4>Résumé</h4>
-        <p>Mensualités : <span id="monthly-installment"></span> €</p>
-        <p>Montant de l'emprunt : <span id="total-loan-amount"></span> €</p>
-        <p>Coûts des intérêts : <span id="interest-cost"></span> €</p>
-        <p>Frais de notaire : <span id="notary-fees"></span> €</p>
+        <div>
+          <p>Mensualités : <span id="monthly-installment">0.00</span></p>
+          <p>Montant de l’emprunt : <span id="total-loan-amount">0.00</span></p>
+          <p>Coût des intérêts : <span id="interest-cost">0.00</span></p>
+          <p>Frais de notaire : <span id="notary-fees">0.00</span></p>
+        </div>
       </div>
     </div>
 

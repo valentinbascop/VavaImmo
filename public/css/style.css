@@ -218,6 +218,12 @@ a:link, a:visited{
     padding: unset;
 }
 
+.form-group textarea{
+    resize: none;
+    height: 180px;
+    width: 100%;
+}
+
 .form-check{
     text-align: center;
     margin-bottom: 5px;
@@ -404,6 +410,7 @@ hr{
     font-size: 20px;
     width: 100%;
     text-align: center;
+    margin-bottom: 60px;
 }
 
 .row-info-property{
@@ -411,6 +418,7 @@ hr{
     gap: 60px;
     width: 100%;
     justify-content: center;
+    margin-bottom: 60px;
 }
 
 .row-title{
