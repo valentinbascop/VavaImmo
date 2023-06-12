@@ -32,6 +32,14 @@
                 </div>
                 @include('shared.select', ['label' => 'Options', 'name' => 'options', 'value' => $property->options()->pluck('id'), 'multiple' => true, 'options' => $options])
                 @include('shared.checkbox', ['label' => 'Vendu', 'name' => 'sold', 'value' => $property->sold, 'options' => $options])
+
+                <button class="form-submit-btn">
+            @if($property->exists)
+                Modifier
+            @else
+                Créer
+            @endif
+        </button>
             </div>
             <div class="form-row">
                 @foreach($property->pictures as $picture)
@@ -48,15 +56,6 @@
                 @include('shared.upload', ['label' => 'Image', 'name' => 'pictures', 'multiple' =>  true])
             </div>
         </div>
-
-
-        <button class="form-submit-btn">
-            @if($property->exists)
-                Modifier
-            @else
-                Créer
-            @endif
-        </button>
     </form>
 
 @endsection

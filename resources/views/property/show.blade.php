@@ -108,7 +108,7 @@
   
       <div class="form-group">
         <label for="down-payment">Apport personnel</label>
-        <input type="number" id="down-payment" class="form-control" placeholder="Enter down payment amount">
+        <input type="number" id="down-payment" class="form-control" placeholder="Entrez le montant de votre apport personnel">
       </div>
   
       <div class="form-group">
