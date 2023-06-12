@@ -254,11 +254,20 @@ a:link, a:visited{
     text-align: center;
 }
 
+.listing-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+}
+
 .listing-properties{
     display: flex;
     gap: 30px 50px;
     flex-wrap: wrap;
     width: 100%;
+    justify-content: center;
 }
 
 .list-element{
@@ -277,8 +286,13 @@ a:link, a:visited{
 
 /* Card */
 
+.card{
+    height: 100%;
+}
+
 .card-image{
-    height: 300px;
+    /* height: 300px; */
+    height: 70%;
     width: 100%;
 }
 
@@ -293,6 +307,7 @@ a:link, a:visited{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-top: transparent;
+    height: 30%;
 }
 
 .card-title{
@@ -344,7 +359,7 @@ a:link, a:visited{
 
 .container-list-property .row{
     display: flex;
-    gap: 20px;
+    gap: 35px;
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
@@ -361,7 +376,7 @@ a:link, a:visited{
     width: 100%;
     margin-bottom: 60px;
     padding: 0 40px;
-    max-width: 1400px;
+    /* max-width: 1400px; */
 }
 
 .form-contact{
@@ -551,4 +566,84 @@ hr{
     width: 100%;
     max-width: 600px;
     text-align: center;
+  }
+
+  /* Paginate */
+
+  .paginate-property{
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .paginate-property div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+  }
+
+  .paginate-property div a:visited, .paginate-property div a:link{
+    color: black;
+  }
+
+  .paginate-property div.hidden{
+    display: none;
+  }
+
+  /* Responsive */
+
+  @media screen and (max-width: 1450px) {
+    .form-contact-container {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 60px;
+        padding: 0 40px;
+        max-width: 800px;
+    }
+
+    hr{
+        max-width: 800px;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+
+    .listing-container{
+        padding: unset;
+    }
+
+    .list-element {
+        width: calc((100% / 2) - 70px );
+    }
+
+    .form-contact-container {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 60px;
+        padding: 0 40px;
+        max-width: 600px;
+    }
+
+    hr{
+        max-width: 600px;
+    }
+
+    .carousel-container {
+        max-width: 600px;
+        margin-bottom: 20px;
+        position: relative;
+        overflow: hidden;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+
+    .listing-properties{
+        padding: 0 20px;
+    }
+
+    .list-element {
+        width: 100%;
+    }
   }
