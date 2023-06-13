@@ -31,18 +31,18 @@
                 </ul>
             </div>
             <div class="log-out">
-                    @auth 
-                        <ul class="nav-logout">
-                            <li class="nav-item">
-                                <form action="{{ route('logout') }}" method="post">
-                                    @csrf
-                                    @method('delete')
-                                    <button class="nav-link">Se déconnecter</button>
-                                </form>
-                            </li>
-                        </ul>
-                    @endauth
-                </div>
+                @auth 
+                    <ul class="nav-logout">
+                        <li class="nav-item">
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button class="nav-link">Se déconnecter</button>
+                            </form>
+                        </li>
+                    </ul>
+                @endauth
+            </div>
         </div>
     </nav>
 
