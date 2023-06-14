@@ -40,6 +40,9 @@
                         Créer
                     @endif
                 </button>
+                <button class="go-back">
+                    <a href="{{ route('admin.property.index')}}">Retour</a>
+                </button>
             </div>
             <div class="form-row">
                 @foreach($property->pictures as $picture)

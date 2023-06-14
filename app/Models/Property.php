@@ -45,10 +45,10 @@ class Property extends Model
         // Trad : Une propery peut avoir plusieurs images
     }
 
-    /**
+    /** PHPDoc
      * @param UploadedFile[] $files
      */
-    public function attachFiles(?array $files){
+    public function attachFiles(?array $files): void{
         if ($files === null || empty($files)) {
             return;
         }

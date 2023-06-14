@@ -32,6 +32,21 @@ a:link, a:visited{
     background: #475465;
 }
 
+.nav-link.active{
+    position: relative;
+}
+
+.nav-link.active::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: white;
+    bottom: -2px;
+    left: 0;
+}
+
+
 .navbar a:link, .navbar a:visited{
     color: white;
 }
@@ -131,6 +146,12 @@ a:link, a:visited{
 .list-table{
     width: 100%;
     max-width: 1400px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.list-table tbody tr:nth-child(2n){
+    background-color: lightgray;
 }
 
 .list-table tbody tr td{
@@ -146,7 +167,7 @@ a:link, a:visited{
 .action-btn a{
     padding: 15px;
     border-radius: 10px;
-    background: #556C96;
+    /* background: #556C96; */
     color: white;
     border: transparent;
 }
@@ -154,7 +175,7 @@ a:link, a:visited{
 .delete-btn{
     padding: 15px;
     border-radius: 10px;
-    background: #FF584D;
+    /* background: #FF584D; */
     color: white;
     cursor: pointer;
     border: transparent;
@@ -274,6 +295,22 @@ a:link, a:visited{
     width: calc((100% / 3) - 50px );
 }
 
+/* .list-element {
+    opacity: 0;
+    animation: slideInRight 1.5s ease-in-out forwards;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+} */
+
 .list-element .card-text, .list-element .card-body, .list-element .card-title{
     margin: 0;
 }
@@ -308,6 +345,11 @@ a:link, a:visited{
     border-bottom-right-radius: 10px;
     border-top: transparent;
     height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .card-title{
@@ -421,11 +463,25 @@ hr{
     margin: 10px 0;
 }
 
+.table.feature tr:nth-child(odd){
+    background-color: lightgray;
+}
+
+.test{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+    align-items: center;
+    gap: 50px;
+    text-align: center;
+}
+
 .property-desc{
+    margin-top: 30px;
+    margin-bottom: 30px;
     font-size: 20px;
     width: 100%;
     text-align: center;
-    margin-bottom: 60px;
 }
 
 .row-info-property{
@@ -433,7 +489,7 @@ hr{
     gap: 60px;
     width: 100%;
     justify-content: center;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .row-title{
@@ -591,6 +647,13 @@ hr{
     display: none;
   }
 
+  /* Mobile menu*/ 
+
+  .mobile-menu {
+    display: none;
+    top: -100%;
+  }
+
   /* Responsive */
 
   @media screen and (max-width: 1450px) {
@@ -637,6 +700,111 @@ hr{
     }
   }
 
+  @media screen and (max-width: 1024px) {
+
+    .navbar-admin{
+        display: none;
+    }
+
+    .nav-container {
+        display: none;
+    }
+
+    .mobile-menu-items.show{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-menu{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        left: 100%;
+        background-color: #475465;
+        padding: 20px;
+        gap: 30px;
+        text-align: center;
+        transition: ease-out .3s;
+    }
+
+    .mobile-menu .nav-item{
+        list-style: none;
+        margin-bottom: 30px;
+    }
+
+      /* MOBILE MENU */
+
+  .mobile-menu-toggle{
+    display: flex;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .burger-menu {
+    background-color: white;
+    height: 1px;
+    width: 25px;
+    display: block;
+    position: relative;
+    transition: ease-out .3s;
+    cursor: pointer;
+  }
+
+  .burger-menu::before{
+    position: absolute;
+    content: "";
+    background-color: white;
+    height: 1px;
+    width: 25px;
+    top: -9px;
+    left: 0;
+    width: 100%;
+  }
+
+  .burger-menu::after{
+    position: absolute;
+    content: "";
+    background-color: white;
+    height: 1px;
+    width: 25px;
+    bottom: -9px;
+    width: 100%;
+    left: 0;
+  }
+
+  .form-log-out{
+    color: white !important;
+    cursor: pointer;
+  }
+  
+  .mobile-menu-items {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mobile-menu-item {
+    margin-bottom: 10px;
+  }
+  
+  .mobile-menu-link {
+    display: block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .mobile-menu-link.active {
+    font-weight: bold;
+  }
+  
+
+  }
+
   @media screen and (max-width: 860px) {
 
     .search-property{
@@ -655,11 +823,40 @@ hr{
         flex-direction: column;
     }
 
-    .listing-properties{
+    /* .listing-properties{
         padding: 0 20px;
-    }
+    } */
 
     .list-element {
         width: 100%;
+    }
+
+    .global-row{
+        flex-direction: column;
+    }
+
+    .global-row .form-row{
+        width: 100%;
+    }
+
+    .info-property{
+        width: 100%;
+    }
+
+    .carousel-container{
+        width: 100%;
+    }
+
+    .test{
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .container{
+        width: calc(100% - 40px);
+    }
+
+    .form-create .form-row .row {
+        flex-direction: column;
     }
   }
