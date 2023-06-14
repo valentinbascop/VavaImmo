@@ -34,6 +34,7 @@
                 @include('shared.checkbox', ['label' => 'Vendu', 'name' => 'sold', 'value' => $property->sold, 'options' => $options])
 
                 <button class="form-submit-btn">
+
                     @if($property->exists)
                         Modifier
                     @else
