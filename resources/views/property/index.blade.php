@@ -17,16 +17,18 @@
     </div>
 
     <div class="container container-list-property">
-        <div class="row">
-            @forelse($properties as $property)
-            <div class="list-element">
-                @include('property.card')
+        <div class="test">
+            <div class="row">
+                @forelse($properties as $property)
+                <div class="list-element">
+                    @include('property.card')
+                </div>
+                @empty
+                <div class="list-property-error">
+                    Aucun résultat ne correspond a votre recherche.
+                </div>
+                @endforelse
             </div>
-            @empty
-            <div class="list-property-error">
-                Aucun résultat ne correspond a votre recherche.
-            </div>
-            @endforelse
         </div>
     </div>
 

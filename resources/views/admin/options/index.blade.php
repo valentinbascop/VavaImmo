@@ -22,11 +22,11 @@
                     <td>{{ $option->name }}</td>
                     <td>
                         <div class="action-btn">
-                            <a classs="edit-btn" href="{{ route('admin.option.edit', $option) }}"> Editer </a>
+                            <a classs="edit-btn" href="{{ route('admin.option.edit', $option) }}"> <i class="fa-solid fa-pen" style="color: #556C96;"></i> </a>
                             <form action="{{ route('admin.option.destroy', $option) }}" method="post">
                                 @csrf 
                                 @method("delete")
-                                <button class="delete-btn">Supprimer</button>
+                                <button class="delete-btn"><i class="fa-solid fa-trash" style="color: #FF584D;"></i></button>
                             </form>
                         </div>
                     </td>
@@ -34,7 +34,6 @@
             @endforeach
         </tbody>
     </table>
-
     {{ $options->links()}}
 
 @endsection

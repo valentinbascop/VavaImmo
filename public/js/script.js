@@ -1,3 +1,14 @@
+// RESPONSIVE MENU
+
+document.addEventListener("DOMContentLoaded", function () {
+  let toggleButton = document.querySelector(".mobile-menu-toggle");
+  let menuItems = document.querySelector(".mobile-menu-items");
+
+  toggleButton.addEventListener("click", function () {
+    menuItems.classList.toggle("show");
+  });
+});
+
 // Add this JavaScript code after including the jQuery library
 
 $(document).ready(function() {

@@ -6,19 +6,53 @@
 
 <div class="container">
 
-  <h1 class="property-title">{{ $property->title}}</h1>
-
-  <div class="carousel-container">
-  <div class="carousel-inner">
-    @foreach($property->pictures as $k => $picture)
-      <div class="carousel-item {{$k === 0 ? 'active' : '' }}">
-        <img src="{{ $picture->getImageUrl() }}" alt="">
+  <div class="test">
+    <div class="info-property">
+      <h1 class="property-title">{{ $property->title}}</h1>
+      <div class="row-title">
+        <h2>Caractéristique</h2>
+        <table class="table feature">
+          <tr>
+            <td>Adresse</td>
+            <td>{{ $property->address }}</td>
+          </tr>
+          <tr>
+            <td>Ville</td>
+            <td>{{ $property->city }} ({{ $property->postal_code }})</td>
+          </tr>
+          <tr>
+            <td>Surface habitable</td>
+            <td>{{ $property->surface }} m²</td>
+          </tr>
+          <tr>
+            <td>Pièces</td>
+            <td>{{ $property->rooms }}</td>
+          </tr>
+          <tr>
+            <td>Chambres</td>
+            <td>{{ $property->bedrooms }}</td>
+          </tr>
+          <tr>
+            <td>Etage</td>
+            <td>{{ $property->floor ?: 'RDC' }}</td>
+          </tr>
+        </table>
       </div>
-    @endforeach
+    </div>
+
+    <div class="carousel-container">
+      <div class="carousel-inner">
+        @foreach($property->pictures as $k => $picture)
+          <div class="carousel-item {{$k === 0 ? 'active' : '' }}">
+            <img src="{{ $picture->getImageUrl() }}" alt="">
+          </div>
+        @endforeach
+      </div>
+      <button class="carousel-prev"><i class="fa-solid fa-arrow-left"></i></button>
+      <button class="carousel-next"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+
   </div>
-  <button class="carousel-prev"><i class="fa-solid fa-arrow-left"></i></button>
-  <button class="carousel-next"><i class="fa-solid fa-arrow-right"></i></button>
-</div>
 
 
 
@@ -26,6 +60,23 @@
 
   <div class="property-info">
     {{ number_format($property->price, thousands_separator: ' ')}} €
+  </div>
+
+  <hr>
+  <div class="property-desc">
+    <p>{!! nl2br($property->description) !!}</p>
+  </div>
+
+  
+  <div class="row row-info-property">
+    <div class="row-title">
+      <h2>Spécificités</h2>
+      <ul class="list-group">
+        @foreach($property->options as $option)
+          <li class="list-element">{{ $option->name }}</li>
+        @endforeach
+      </ul>
+    </div>
   </div>
 
   <hr>
@@ -50,49 +101,6 @@
     </form>
   </div>
 
-  <div class="property-desc">
-    <p>{!! nl2br($property->description) !!}</p>
-  </div>
-  <div class="row row-info-property">
-    <div class="row-title">
-      <h2>Caractéristique</h2>
-      <table class="table feature">
-        <tr>
-          <td>Adresse</td>
-          <td>{{ $property->address }}</td>
-        </tr>
-        <tr>
-          <td>Ville</td>
-          <td>{{ $property->city }} ({{ $property->postal_code }})</td>
-        </tr>
-        <tr>
-          <td>Surface habitable</td>
-          <td>{{ $property->surface }} m²</td>
-        </tr>
-        <tr>
-          <td>Pièces</td>
-          <td>{{ $property->rooms }}</td>
-        </tr>
-        <tr>
-          <td>Chambres</td>
-          <td>{{ $property->bedrooms }}</td>
-        </tr>
-        <tr>
-          <td>Etage</td>
-          <td>{{ $property->floor ?: 'RDC' }}</td>
-        </tr>
-      </table>
-    </div>
-    <div class="row-title">
-      <h2>Spécificités</h2>
-      <ul class="list-group">
-        @foreach($property->options as $option)
-          <li class="list-element">{{ $option->name }}</li>
-        @endforeach
-      </ul>
-    </div>
-
-  </div>
 
   <hr>
 

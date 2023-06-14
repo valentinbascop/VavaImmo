@@ -33,11 +33,11 @@ $value ??= '';
                     <td>{{ $property->sold ? 'Vendu' : 'Dispo' }}</td>
                     <td>
                         <div class="action-btn">
-                            <a classs="edit-btn" href="{{ route('admin.property.edit', $property) }}"> Editer </a>
+                            <a classs="edit-btn" href="{{ route('admin.property.edit', $property) }}"> <i class="fa-solid fa-pen" style="color: #556C96;"></i> </a>
                             <form action="{{ route('admin.property.destroy', $property) }}" method="post">
                                 @csrf 
                                 @method("delete")
-                                <button class="delete-btn">Supprimer</button>
+                                <button class="delete-btn"><i class="fa-solid fa-trash" style="color: #FF584D;"></i></button>
                             </form>
                         </div>
                     </td>
