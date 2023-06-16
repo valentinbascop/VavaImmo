@@ -328,22 +328,6 @@ a:link, a:visited{
     width: calc((100% / 3) - 50px );
 }
 
-/* .list-element {
-    opacity: 0;
-    animation: slideInRight 1.5s ease-in-out forwards;
-}
-
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-} */
-
 .list-element .card-text, .list-element .card-body, .list-element .card-title{
     margin: 0;
 }
@@ -688,11 +672,134 @@ hr{
     text-align: center;
     justify-content: center;
     align-items: center;
+    gap: 30px;
   }
 
   .profile-informations{
     width: 100%;
   }
+
+  .profile-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .profile-info-submit{
+    padding: 15px;
+    background: #556C96;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    max-width: 94%;
+    display: block;
+    width: 100%;
+  }
+
+  .profile-delete-submit{
+    margin-top: 30px;
+    padding: 15px;
+    background:#FF584D;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    max-width: 94%;
+    display: block;
+    width: 100%;
+  }
+
+  .profile-delete-submit:hover{
+    background:#f95044ca;
+  }
+
+  .update-row-input{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .update-btn-container{
+    width: 100%;
+  }
+
+  .update-row-input input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid grey;
+  }
+
+  .profile-info-submit:hover{
+    background: #4788D7;
+  }
+
+  .choice-btn-container{
+    display: flex;
+    width: 100%;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .modal-btn{
+    padding: 15px;
+    background: #FF584D;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.modal-overlay,
+.modal-content {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.modal.open {
+    display: block;
+}
+
+.modal.open .modal-overlay,
+.modal.open .modal-content {
+    opacity: 1;
+}
+
 
   /* Mobile menu*/ 
 

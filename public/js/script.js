@@ -106,3 +106,15 @@ yearsInput.addEventListener('input', function () {
 
 // Initial calculation
 calculateFinancing();
+
+
+function openModal(modalId) {
+  const modal = document.getElementById(modalId);
+  modal.classList.add('open');
+}
+
+function closeModal(modalId, event) {
+  const modal = document.getElementById(modalId);
+  modal.classList.remove('open');
+  event.preventDefault();
+}

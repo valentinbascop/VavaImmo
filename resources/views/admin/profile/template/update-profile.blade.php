@@ -1,10 +1,10 @@
-<section>
+<section class="profile-info-section">
     <header>
-        <h2 class="text-lg font-medium text-gray-900">
+        <h2 class="text-lg profile-info-title font-medium text-gray-900">
             Informations du profil
         </h2>
 
-        <p class="mt-1 text-sm text-gray-600">
+        <p class="mt-1 text-sm profile-info-desc text-gray-600">
             Mettez à jour les informations de votre compte
         </p>
     </header>
@@ -13,11 +13,11 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6 profile-form">
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
         <input type="hidden" name="_method" value="patch" />
 
-        <div>
+        <div class="update-row-input">
             <label for="name" class="block">Name</label>
             <input id="name" name="name" type="text" class="mt-1 block w-full" value="{{ old('name', $user->name) }}" required autofocus autocomplete="name" />
             @if ($errors->has('name'))
@@ -25,7 +25,7 @@
             @endif
         </div>
 
-        <div>
+        <div class="update-row-input">
             <label for="email" class="block">Email</label>
             <input id="email" name="email" type="email" class="mt-1 block w-full" value="{{ old('email', $user->email) }}" required autocomplete="username" />
             @if ($errors->has('email'))
@@ -49,8 +49,8 @@
             @endif
         </div>
 
-        <div class="flex items-center gap-4">
-            <button type="submit" class="bg-blue-500 text-white font-medium py-2 px-4 rounded">{{ __('Save') }}</button>
+        <div class="flex update-btn-container items-center gap-4">
+            <button type="submit" class="bg-blue-500 profile-info-submit text-white font-medium py-2 px-4 rounded">Mettre à jour</button>
 
             @if (session('status') === 'profile-updated')
                 <p
