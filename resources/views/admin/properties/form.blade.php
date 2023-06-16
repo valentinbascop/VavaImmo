@@ -44,7 +44,7 @@
                     <a href="{{ route('admin.property.index')}}">Retour</a>
                 </button>
             </div>
-            <div class="form-row">
+            <div class="form-row image-list">
                 @foreach($property->pictures as $picture)
                     <div id="picture{{ $picture->id }}" class="form-picture-container">
                         <img src="{{ $picture->getImageUrl() }}" alt="" class="form-picture">

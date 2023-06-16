@@ -7,8 +7,9 @@
     <title>@yield('title') | Administration</title>
     <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" >
 </head>
 <body>
@@ -30,6 +31,12 @@
                         <a href="{{ route('admin.option.index')}}"  @class(['nav-link', 'active' => str_contains($route, 'option.')])>Gérer les options</a>
                     </li>
                 </ul>
+            </div>
+            <div class="user-popup">
+                <button>{{ Auth::user()->name }} <i class="fa-solid fa-sort-down"></i></button>
+                <div class="popup-links js-popup">
+                    <a href="{{ route('admin.profile.profile') }}">Modifier le profil</a>
+                </div>
             </div>
             <div class="log-out">
                 @auth 
@@ -57,9 +64,12 @@
         <li class="mobile-menu-item">
             <a href="{{ route('admin.option.index')}}" class="mobile-menu-link @if(str_contains($route, 'option.')) active @endif">Gérer les options</a>
         </li>
+        <div class="mobile-popup-links js-popup-mobile">
+            <a href="{{ route('admin.profile.profile') }}">Modifier le profil</a>
+        </div>
         @auth
         <li class="mobile-menu-item">
-            <form action="{{ route('logout') }}" method="post">
+            <form action="{{ route('logout') }}" method="post" class="form-logout">
                 @csrf
                 @method('delete')
                 <button class="mobile-menu-link form-log-out">Se déconnecter</button>

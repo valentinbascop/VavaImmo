@@ -1,3 +1,20 @@
+// HEADER POPUP
+
+let userClick = document.querySelector('.user-popup');
+let popup = document.querySelector('.js-popup');
+let test = document.querySelector('.js-popup-mobile');
+
+// document.addEventListener('click', (e) => {
+//   console.log(e.currentTarget);
+// })
+
+if(userClick){
+  userClick.addEventListener('click', () => {
+    popup.classList.toggle('show');
+    test.classList.toggle('show');
+  })
+}
+
 // RESPONSIVE MENU
 
 document.addEventListener("DOMContentLoaded", function () {

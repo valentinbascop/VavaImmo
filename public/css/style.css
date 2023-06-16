@@ -61,6 +61,29 @@ a:link, a:visited{
     padding-left: 20px;
 }
 
+.user-popup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    position: relative;
+}
+
+.popup-links{
+    position: absolute;
+    bottom: -70px;
+    left: -45px;
+    background: #475465;
+    padding: 15px;
+    width: 100px;
+    display: none;
+}
+
+.popup-links.show{
+    display: block !important;
+}
+
 .nav-container .navbar-home{
     display: flex;
     justify-content: center;
@@ -198,6 +221,16 @@ a:link, a:visited{
 
 .global-row .form-row{
     width: 50%;
+}
+
+.image-list{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-list div img{
+    border-radius: 10px;
 }
 
 .form-create .form-row .row{
@@ -647,6 +680,20 @@ hr{
     display: none;
   }
 
+  /* Profile update */
+
+  .profile-update-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-informations{
+    width: 100%;
+  }
+
   /* Mobile menu*/ 
 
   .mobile-menu {
@@ -667,6 +714,15 @@ hr{
 
     hr{
         max-width: 800px;
+    }
+  }
+
+  @media screen and (max-width: 1400px) {
+    .container{
+        padding: 0 40px;
+        width: unset;
+        max-width: unset;
+        margin: unset;
     }
   }
 
@@ -733,6 +789,15 @@ hr{
         margin-bottom: 30px;
     }
 
+    .mobile-links a:link, .mobile-links a:visited{
+        color: white;
+        text-decoration: none;
+    }
+
+    .popup-links{
+        position: relative;
+    }
+
       /* MOBILE MENU */
 
   .mobile-menu-toggle{
@@ -779,6 +844,15 @@ hr{
     color: white !important;
     cursor: pointer;
   }
+
+  .form-logout{
+    display: flex;
+    justify-content: center;
+  }
+
+  .mobile-popup-links{
+    margin-bottom: 10px;
+  }
   
   .mobile-menu-items {
     display: none;
@@ -806,6 +880,10 @@ hr{
   }
 
   @media screen and (max-width: 860px) {
+
+    .container{
+        padding: 0 20px;
+    }
 
     .search-property{
         padding: 0 20px;
